@@ -13,8 +13,8 @@ factor=$(echo "$(( (last_level / 10) * 10 ))")
 
 
 
-if [ "$factor" -ge "$level" ]; then
-  if [ "30" -ge "$factor" ]; then
+if [ "$factor" -gt "$level" ]; then
+  if [ "30" -gt "$factor" ]; then
     dunstify -u critical "Battery Level" "${level}%"
   else
     dunstify "Battery Level" "${level}%"
@@ -28,9 +28,9 @@ echo "$level" > ~/.config/i3blocks/battery_level.txt
 battery_code="#20fb02"
 
 
-if [ "30" -ge "$level" ]; then 
+if [ "30" -gt "$level" ]; then 
  battery_code="#f11e14"
-elif [ "50" -ge "$level" ]; then
+elif [ "50" -gt "$level" ]; then
  battery_code="#fb7e02"
 fi
 
