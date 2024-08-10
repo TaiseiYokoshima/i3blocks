@@ -14,7 +14,7 @@ factor=$(echo "$(( (last_level / 10) * 10 ))")
 
 
 if [ "$factor" -gt "$level" ]; then
-  if [ "30" -gt "$factor" ]; then
+  if [ "30" -ge "$factor" ]; then
     dunstify -u critical "Battery Level" "${level}%"
   else
     dunstify "Battery Level" "${level}%"
